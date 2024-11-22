@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import {
   FaChartBar,
   FaBook,
@@ -9,10 +9,22 @@ import {
 } from "react-icons/fa";
 
 const StudentDashboard = () => {
+  const navigate = useNavigate(); // Navigation hook for logout
+
   const user = {
     name: "John Doe",
     email: "johndoe@example.com",
     avatar: "https://via.placeholder.com/100",
+  };
+
+  // Logout handler
+  const handleLogout = () => {
+    // Clear user session (if any)
+    localStorage.removeItem("userToken"); // Example for token-based auth
+    sessionStorage.clear(); // Clear session data
+
+    // Navigate to the landing page
+    navigate("/");
   };
 
   return (
@@ -66,7 +78,11 @@ const StudentDashboard = () => {
                 <span>Settings</span>
               </Link>
             </li>
-            <li className="px-4 py-2 flex items-center space-x-3 hover:bg-red-600 rounded-lg cursor-pointer mt-auto">
+            {/* Logout */}
+            <li
+              onClick={handleLogout}
+              className="px-4 py-2 flex items-center space-x-3 hover:bg-red-600 rounded-lg cursor-pointer mt-auto"
+            >
               <FaSignOutAlt />
               <span>Logout</span>
             </li>
