@@ -1,5 +1,16 @@
-import React, { useState } from "react";
-import LogoutConfirmationModal from "./LogoutConfirmationModal";
+import { useState } from "react";
+import { Link, Outlet, useNavigate } from "react-router-dom"; // Make sure useNavigate is imported here
+import {
+  FaBars,
+  FaTimes,
+  FaUser,
+  FaClipboardList,
+  FaBook,
+  FaBell,
+  FaCog,
+  FaSignOutAlt,
+} from "react-icons/fa";
+
 
 const StudentDashboard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
