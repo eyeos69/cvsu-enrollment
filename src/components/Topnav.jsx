@@ -13,7 +13,7 @@ const TopNav = () => {
         <div className="flex items-center space-x-9 cursor-pointer ">
           {/* Logo with transform effects */}
           <div className="logo transform transition-all duration-300 ease-in-out shadow-lg py-[-8] hover:scale-110 hover:rotate-0">
-            <img src={logo} alt="Logo" className="h-[80px]" />
+            <img src={logo} alt="Logo" className="h-[40px]" />
           </div>
           </div>
           </Link>

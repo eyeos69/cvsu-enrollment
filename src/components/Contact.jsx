@@ -1,42 +1,122 @@
-import React from 'react';
-import Footer from './Footer';
-import Maps from '../assets/maps.png';
+import React from "react";
 
-const Contacts = () => {
+const ContactSection = () => {
   return (
+    <section className="bg-gray-100 text-gray-800 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-    <div id="contacts" 
-    className="bg-gray-440 min-h-screen flex flex-col justify-between"
-    style={{ backgroundImage: `url(${Maps})` }}
-    >
-      {/* Main Content */}
-      <div className="flex-grow flex items-center justify-center px-4 md:px-16">
-        <div className="text-center">
-          <h1 className="text-4xl font-extrabold text-[#092919] text-primary mb-8">Contact Information</h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Government Links */}
+          <div>
+            <h3 className="text-lg font-semibold mb-2">Government Links</h3>
+            <ul className="space-y-2">
+              <li>
+                <a
+                  href="#"
+                  className="hover:underline hover:text-gray-600"
+                >
+                  Government PH
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:underline hover:text-gray-600"
+                >
+                  CHED
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:underline hover:text-gray-600"
+                >
+                  DOST
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:underline hover:text-gray-600"
+                >
+                  Cavite PH
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:underline hover:text-gray-600"
+                >
+                  Imus City
+                </a>
+              </li>
+            </ul>
+          </div>
 
-          {/* Single Contact Panel */}
-          <div className="transition-transform transform hover:scale-105 hover:shadow-xl p-6 bg-[#c5ffdf] rounded-lg shadow-md max-w-lg mx-auto">
-            <p className="text-gray-600 mt-4">
-              <strong>Address:</strong><br />
-              Sampaguita St., Phase 2, Soldiers Hills IV, Molino VI<br />
-              Bacoor, Cavite, Philippines, 4102
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-lg font-semibold mb-2">Quick Links</h3>
+            <ul className="space-y-2">
+              <li>
+                <a
+                  href="#"
+                  className="hover:underline hover:text-gray-600"
+                >
+                  Admission Procedures
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:underline hover:text-gray-600"
+                >
+                  Academic Programs
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:underline hover:text-gray-600"
+                >
+                  News and Updates
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:underline hover:text-gray-600"
+                >
+                  Careers @ CvSU
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:underline hover:text-gray-600"
+                >
+                  Downloadable Forms
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact Information */}
+          <div>
+            <h3 className="text-lg font-semibold mb-2">Contact Information</h3>
+            <p className="text-sm mb-2">
+              Cavite Civic Center, Palico IV, Imus City, Cavite 4103
             </p>
-            <p className="text-gray-600 mt-4">
-              <strong>Email:</strong><br />
-              <a href="mailto:cvsubacoor@cvsu.edu.ph" className="text-primary hover:underline">cvsubacoor@cvsu.edu.ph</a>
+            <p className="text-sm mb-2">
+              <strong>Admin:</strong> (046) 471-6607
             </p>
-            <p className="text-gray-600 mt-4">
-              <strong>Landline:</strong><br />
-              <a href="tel:+63464765029" className="text-primary hover:underline">(046)476-5029</a>
+            <p className="text-sm">
+              <strong>Registrar:</strong> (046) 436-6584
             </p>
           </div>
         </div>
       </div>
-
-      {/* Footer */}
-      <Footer />
-    </div>
+    </section>
   );
 };
 
-export default Contacts;
+export default ContactSection;

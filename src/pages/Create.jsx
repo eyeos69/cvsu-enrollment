@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import AdmissionNav from '../components/AdmissionNav';
 import Laya from "../assets/laya.png"; // Adjust the path based on your project structure
 import { Link } from 'react-router-dom';
 
@@ -32,6 +33,7 @@ const Create = () => {
   };
 
   return (
+    
     <div
       className="min-h-screen flex items-center justify-center bg-gray-100"
       style={{
@@ -40,6 +42,7 @@ const Create = () => {
         backgroundPosition: "center",
       }}
     >
+      <AdmissionNav user={null} />
       <div className="absolute top-0 left-0 w-full h-full bg-[#081708]/80 flex items-center justify-center z-10"></div>
       <div className="w-full max-w-3xl bg-white p-8 shadow-lg rounded-lg z-30">
         {/* Header Section */}

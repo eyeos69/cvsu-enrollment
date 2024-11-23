@@ -22,7 +22,7 @@ const About = () => {
       {/* Main content */}
       <div className="relative py-8 px-4 sm:px-[140px] z-20">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center text-[#092919] mb-6">ABOUT</h2>
+          <h2 className="text-[50px] font-bold text-center text-[#092919] mb-6">ABOUT</h2>
 
           <div className="space-y-4">
             {/* Mission and Vision Section */}
