@@ -1,19 +1,10 @@
-import { useState } from "react";
-import { Link, Outlet, useNavigate } from "react-router-dom";
-import {
-  FaBars,
-  FaTimes,
-  FaUser,
-  FaClipboardList,
-  FaBook,
-  FaBell,
-  FaCog,
-  FaSignOutAlt,
-} from "react-icons/fa";
+import React, { useState } from "react";
+import LogoutConfirmationModal from "./LogoutConfirmationModal";
 
 const StudentDashboard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const navigate = useNavigate(); // React Router's navigation hook for programmatic navigation
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const navigate = useNavigate();
 
   const user = {
     name: "John Doe",
@@ -23,13 +14,10 @@ const StudentDashboard = () => {
 
   // Logout handler
   const handleLogout = () => {
-    const confirmLogout = window.confirm("Are you sure you want to logout?");
-    if (confirmLogout) {
-      // Clear user session (if any)
-      localStorage.removeItem("userToken"); // Example for token-based auth
-      sessionStorage.clear(); // Clear session data
-      navigate("/login"); // Redirect to login page
-    }
+    // Clear session data
+    localStorage.removeItem("userToken");
+    sessionStorage.clear();
+    navigate("/login");
   };
 
   return (
@@ -70,49 +58,10 @@ const StudentDashboard = () => {
                 <span>Profile</span>
               </Link>
             </li>
-            <li>
-              <Link
-                to="courses"
-                className="px-4 py-2 flex items-center space-x-3 hover:bg-gray-700 rounded-lg cursor-pointer"
-                onClick={() => setIsSidebarOpen(false)}
-              >
-                <FaBook />
-                <span>Courses</span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="enroll"
-                className="px-4 py-2 flex items-center space-x-3 hover:bg-gray-700 rounded-lg cursor-pointer"
-                onClick={() => setIsSidebarOpen(false)}
-              >
-                <FaClipboardList />
-                <span>Enroll</span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="notifications"
-                className="px-4 py-2 flex items-center space-x-3 hover:bg-gray-700 rounded-lg cursor-pointer"
-                onClick={() => setIsSidebarOpen(false)}
-              >
-                <FaBell />
-                <span>Notifications</span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="settings"
-                className="px-4 py-2 flex items-center space-x-3 hover:bg-gray-700 rounded-lg cursor-pointer"
-                onClick={() => setIsSidebarOpen(false)}
-              >
-                <FaCog />
-                <span>Settings</span>
-              </Link>
-            </li>
+            {/* Other navigation links */}
             <li>
               <button
-                onClick={handleLogout}
+                onClick={() => setIsModalOpen(true)}
                 className="w-full px-4 py-2 flex items-center space-x-3 hover:bg-red-600 rounded-lg cursor-pointer mt-auto"
               >
                 <FaSignOutAlt />
@@ -135,6 +84,13 @@ const StudentDashboard = () => {
       <main className="flex-1 overflow-y-auto h-full p-8">
         <Outlet /> {/* This renders the nested route components */}
       </main>
+
+      {/* Logout Confirmation Modal */}
+      <LogoutConfirmationModal
+        isOpen={isModalOpen}
+        onConfirm={handleLogout}
+        onCancel={() => setIsModalOpen(false)}
+      />
     </div>
   );
 };
