@@ -16,7 +16,7 @@ const db = mysql.createConnection({
   user: 'root',           // Your database username
   password: 'eyeos',      // Your database password
   database: 'enrollmentdatabase', // Your database name
-  port: 3306,             // Default MySQL/MariaDB port; confirm if it's different
+  port: 3307,             // Default MySQL/MariaDB port; confirm if it's different
 });
 
 
