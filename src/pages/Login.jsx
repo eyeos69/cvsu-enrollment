@@ -29,7 +29,6 @@ const Login = () => {
       const response = await axios.post('http://localhost:5005/login', { ID, password });
 
       if (response.status === 200) {
-        alert('Login successful!');
         navigate('/studentdb');
       }
     } catch (error) {
