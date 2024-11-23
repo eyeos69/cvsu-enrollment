@@ -29,7 +29,7 @@ const StudentDashboard = () => {
     // Clear session data
     localStorage.removeItem("userToken");
     sessionStorage.clear();
-    navigate("/login");
+    navigate("/");
   };
 
   return (
