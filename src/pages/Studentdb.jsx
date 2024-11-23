@@ -1,5 +1,6 @@
-import { useState } from "react";
-import { Link, Outlet, useNavigate } from "react-router-dom"; // Make sure useNavigate is imported here
+import React, { useState } from "react";
+import LogoutConfirmationModal from "./LogoutConfirmationModal";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import {
   FaBars,
   FaTimes,
