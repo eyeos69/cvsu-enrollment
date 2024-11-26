@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 import { useState } from "react";
+=======
+import React, { useState } from "react";
+import LogoutConfirmationModal from "./LogoutConfirmationModal";
+>>>>>>> 972bf1191cd592bdb8f287b1dda1099eaa9efa6a
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import {
   FaBars,
@@ -11,9 +16,15 @@ import {
   FaSignOutAlt,
 } from "react-icons/fa";
 
+
 const StudentDashboard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+<<<<<<< HEAD
   const navigate = useNavigate(); // React Router's navigation hook for programmatic navigation
+=======
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const navigate = useNavigate();
+>>>>>>> 972bf1191cd592bdb8f287b1dda1099eaa9efa6a
 
   const user = {
     name: "John Doe",
@@ -23,10 +34,17 @@ const StudentDashboard = () => {
 
   // Logout handler
   const handleLogout = () => {
+<<<<<<< HEAD
     const confirmLogout = window.confirm("Are you sure you want to logout?");
     if (confirmLogout) {
       navigate("/login"); // Redirect to login page
     }
+=======
+    // Clear session data
+    localStorage.removeItem("userToken");
+    sessionStorage.clear();
+    navigate("/");
+>>>>>>> 972bf1191cd592bdb8f287b1dda1099eaa9efa6a
   };
 
   return (
@@ -37,6 +55,7 @@ const StudentDashboard = () => {
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
         } transition-transform duration-300 lg:relative lg:translate-x-0`}
       >
+<<<<<<< HEAD
         
         <div className="p-6 flex flex-col items-center border-b border-gray-700">
           <Link
@@ -49,13 +68,29 @@ const StudentDashboard = () => {
           />
           </Link>
           
+=======
+        <div className="p-6 flex flex-col items-center border-b border-gray-700">
+          <Link to="home">
+            <img
+              src={user.avatar}
+              alt="Profile"
+              className="rounded-full w-20 h-20 mb-3 border-4 border-white cursor-pointer"
+              onClick={() => setIsSidebarOpen(false)}
+            />
+          </Link>
+
+>>>>>>> 972bf1191cd592bdb8f287b1dda1099eaa9efa6a
           <h2
             className="text-xl font-semibold cursor-pointer"
             onClick={() => setIsSidebarOpen(false)}
           >
+<<<<<<< HEAD
             
             {user.name}
             
+=======
+            {user.name}
+>>>>>>> 972bf1191cd592bdb8f287b1dda1099eaa9efa6a
           </h2>
           <p className="text-sm text-gray-400">{user.email}</p>
         </div>
@@ -71,7 +106,9 @@ const StudentDashboard = () => {
                 <span>Profile</span>
               </Link>
             </li>
+            {/* Other navigation links */}
             <li>
+<<<<<<< HEAD
               <Link
                 to="courses"
                 className="px-4 py-2 flex items-center space-x-3 hover:bg-gray-700 rounded-lg cursor-pointer"
@@ -116,6 +153,12 @@ const StudentDashboard = () => {
                 onClick={handleLogout}
                 className="w-full px-4 py-2 flex items-center space-x-3 hover:bg-red-600 rounded-lg cursor-pointer mt-auto"
               >
+=======
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="w-full px-4 py-2 flex items-center space-x-3 hover:bg-red-600 rounded-lg cursor-pointer mt-auto"
+              >
+>>>>>>> 972bf1191cd592bdb8f287b1dda1099eaa9efa6a
                 <FaSignOutAlt />
                 <span>Logout</span>
               </button>
@@ -133,9 +176,20 @@ const StudentDashboard = () => {
       </button>
 
       {/* Main Content */}
+<<<<<<< HEAD
       <main className="flex-1  overflow-y-auto h-full p-8">
+=======
+      <main className="flex-1 overflow-y-auto h-full p-8">
+>>>>>>> 972bf1191cd592bdb8f287b1dda1099eaa9efa6a
         <Outlet /> {/* This renders the nested route components */}
       </main>
+
+      {/* Logout Confirmation Modal */}
+      <LogoutConfirmationModal
+        isOpen={isModalOpen}
+        onConfirm={handleLogout}
+        onCancel={() => setIsModalOpen(false)}
+      />
     </div>
   );
 };

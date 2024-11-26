@@ -1,8 +1,15 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from "react";
 import AdmissionNav from "../components/AdmissionNav";
 import { useAppContext } from "../contexts/AppContext";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 import Laya from "../assets/laya.png";
+=======
+import React, { useState } from "react";
+import AdmissionNav from '../components/AdmissionNav';
+import Laya from "../assets/laya.png"; // Adjust the path based on your project structure
+import { Link } from 'react-router-dom';
+>>>>>>> 972bf1191cd592bdb8f287b1dda1099eaa9efa6a
 
 const Create = () => {
   const {
@@ -84,6 +91,7 @@ const Create = () => {
   };
 
   return (
+    
     <div
       className="flex items-center justify-center min-h-screen bg-fixed bg-cover bg-center pb-[70px] pt-[70px]"
       style={{
@@ -93,7 +101,11 @@ const Create = () => {
       }}
     >
       <AdmissionNav user={null} />
+<<<<<<< HEAD
       <div className="top-0 left-0 w-full h-full bg-[#081708]/80 flex fixed items-center justify-center z-10"></div>
+=======
+      <div className="absolute top-0 left-0 w-full h-full bg-[#081708]/80 flex items-center justify-center z-10"></div>
+>>>>>>> 972bf1191cd592bdb8f287b1dda1099eaa9efa6a
       <div className="w-full max-w-3xl bg-white p-8 shadow-lg rounded-lg z-30">
         <div className="flex justify-center items-center mb-6">
           <div>

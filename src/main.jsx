@@ -9,6 +9,7 @@ import Privacy from './pages/DataPrivacyNotice.jsx';
 import Create from './pages/Create.jsx';
 
 import Studentdb from './pages/Studentdb.jsx';
+<<<<<<< HEAD
 import Profile from './pages/StudentdbPages/Profile.jsx';
 import Courses from "./pages/StudentdbPages/Courses.jsx";
 import Enroll from "./pages/StudentdbPages/Enroll.jsx";
@@ -25,6 +26,15 @@ import Education from './pages/CreateAppPages/Education.jsx';
 import Requirement from './pages/CreateAppPages/Requirement.jsx';
 import Appointment from './pages/CreateAppPages/Appointment.jsx';
 
+=======
+import Profile from './StudentdbPages/Profile.jsx';
+import Courses from "./StudentdbPages/Courses.jsx";
+import Enroll from "./StudentdbPages/Enroll.jsx";
+import Home from "./StudentdbPages/Home.jsx";
+import Notifications from "./StudentdbPages/Notifications.jsx";
+import Settings from "./StudentdbPages/Settings.jsx";
+import CreateApplication from "./pages/CreateApplication.jsx";
+>>>>>>> 972bf1191cd592bdb8f287b1dda1099eaa9efa6a
 import Register from './pages/Register.jsx';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -126,6 +136,12 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <AppProvider>
       <RouterProvider router={router} />
+<<<<<<< HEAD
     </AppProvider>
   </StrictMode>
 );
+=======
+    </StrictMode>
+  );
+  
+>>>>>>> 972bf1191cd592bdb8f287b1dda1099eaa9efa6a

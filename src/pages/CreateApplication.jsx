@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useState } from "react";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import {
@@ -52,6 +53,64 @@ const AdmissionsPage = () => {
             {user.name}
           </h2>
           <p className="text-sm text-gray-400">{user.email}</p>
+=======
+
+import React, { useState } from "react";
+import AdmissionNav from '../components/AdmissionNav';
+import Stepper from "../components/Stepper";
+
+const Create = () => {
+  // Define the progress phases
+  const phases = [
+    'Application Details',
+    'Personal Info',
+    'Contact Details',
+    'Family Profile',
+    'Educational Info',
+    'Upload Requirements',
+    'Schedule Appointment',
+  ];
+
+    const [applicantType, setApplicantType] = useState("");
+    const [seniorHighTrack, setSeniorHighTrack] = useState("");
+    const [strand, setStrand] = useState("");
+    const [preferredProgram, setPreferredProgram] = useState("");
+    const [errorMessage, setErrorMessage] = useState("");
+  
+    const handleSubmit = () => {
+      // Check if the applicant is from "academic" or "tech-voc" track
+      if (
+        ["shs", "grade12"].includes(applicantType) && // Only check for these type
+        !["stem", "ict"].includes(strand) // Ensure they choose either "stem" or "ict" strand
+      ) {
+        setErrorMessage(
+          "You must be a STEM or ICT student to choose the selected program."
+        );
+        return;
+      }
+  
+      setErrorMessage("");
+      alert("Application successfully created!");
+      
+    };
+
+  return (
+    <>
+      {/* Admission Navigation Bar */}
+      <AdmissionNav user={null} />
+    
+
+      {/* Page Content */}
+      <main className="mt-[80px] container mx-auto px-4">
+        {/* Page Title */}
+        <div className="text-center my-8">
+          <h1 className="text-3xl font-bold text-gray-800">
+            Admission Application
+          </h1>
+          <p className="text-lg text-gray-600 mt-2">
+            Computer Studies Department - First Semester, 2025-2026
+          </p>
+>>>>>>> 972bf1191cd592bdb8f287b1dda1099eaa9efa6a
         </div>
         <nav className="flex-1 mt-4">
           <ul className="space-y-2">
@@ -138,6 +197,7 @@ const AdmissionsPage = () => {
         </nav>
       </aside>
 
+<<<<<<< HEAD
       {/* Mobile Menu Button */}
       <button
         className="lg:hidden fixed top-4 left-4 z-50 bg-[#081708] text-white p-2 rounded-md"
@@ -150,8 +210,19 @@ const AdmissionsPage = () => {
       <main className="flex-1 overflow-y-auto h-full p-8">
         <Outlet /> {/* This renders the nested route components */}
       </main>
+=======
+        {/* Progress Indicator */}
+          <div>
+      <Stepper />
+>>>>>>> 972bf1191cd592bdb8f287b1dda1099eaa9efa6a
     </div>
+      </main>
+    </>
   );
 };
 
+<<<<<<< HEAD
 export default AdmissionsPage;
+=======
+export default Create;
+>>>>>>> 972bf1191cd592bdb8f287b1dda1099eaa9efa6a

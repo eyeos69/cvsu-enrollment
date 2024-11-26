@@ -119,4 +119,8 @@ const ContactSection = () => {
   );
 };
 
+<<<<<<< HEAD
 export default ContactSection;
+=======
+export default ContactSection;
+>>>>>>> 972bf1191cd592bdb8f287b1dda1099eaa9efa6a
